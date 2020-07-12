@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+import "base_common.proto";
+
+package mm_pb;
+
+option go_package =".;mm_pb";
+
+message GetLoginQRCodeRequest {
+   required BaseRequest baseRequest = 1;
+   required AesKey aes = 2;
+   required uint32 opcode = 3;
+   optional string deviceName = 4;
+   optional string userName = 5;
+   required  uint32 extDevLoginType = 6;
+   optional string hardwareExtra = 7;
+   optional string softType = 8;
+   optional RSAPem rsa = 9;
+}

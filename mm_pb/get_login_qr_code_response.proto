@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+import "base_common.proto";
+
+package mm_pb;
+
+option go_package = ".;mm_pb";
+
+message GetLoginQRCodeResponse {
+    required BaseResponse baseResponse = 1;
+    required QRCode qRCode = 2;
+    required string uuid = 3;
+    required uint32 checkTime = 4;
+    required AesKey AESKey = 5;
+    required uint32 expiredTime = 6;
+    optional string blueToothBroadCastUuid = 7;
+    optional SKBuiltinStringBuffer blueToothBroadCastContent = 8;
+}
+message QRCode {
+    required uint32 len = 1;
+    required bytes src = 2;
+}
